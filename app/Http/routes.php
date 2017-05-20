@@ -11,26 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'NovatecController@index');
 
-Route::get('/login/', function () {
-    return view('login');
-});
+Route::get('/ex2', function () {
+    return view('pagina2' , [
+        'curso' => 'Laravel',
+        'local' => 'Novatec',
+        'turma' => '1',
+        'alunos' => [
 
-Route::post('/novapost/', function () {
-    return view('welcome');
-});
+        ],
+        'codigo_html' => '<h3>Isso veio do banco</h3>'
 
-Route::delete('/novadel', function () {
-    return view('welcome');
-});
-
-Route::put('/novaput', function () {
-    return view('welcome');
-});
-
-Route::options('/novaoptions', function () {
-    return view('welcome');
+    ]);
 });
